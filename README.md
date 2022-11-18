@@ -196,7 +196,7 @@ RECURSOS
 <h3 class="center subtitulo"> SUBTITUTLO🧠 </h3>
 <span class="subtitulo">hola</span>
 
-```cpp 
+```python 
 int x = 23;
 ```
 # 🙂SEMANA 3
