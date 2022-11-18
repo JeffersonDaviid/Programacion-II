@@ -145,11 +145,11 @@ strong {
 </style>
 
 <center>
-<h1 class="title"> PROGRAMACION II </h1><br>
+<span class="title"> PROGRAMACION II </span><br>
 <span class="tag"> < </span>
 <span class="autor">JEFFERSON DAVID</span>
 <span class="tag"> /> </span><br><br>
-<h2 class="bimestre"> I BIMESTRE </h2></center>
+<span class="bimestre"> I BIMESTRE </span></center>
 
 
 # 🤣SEMANA 1
@@ -202,6 +202,48 @@ RECURSOS
 
 <div class="container">
 <div class="indicador"> SEMANA 13:  ÁRBOLES- 15.08.2022 </div><br>
+
+## ARBOL BINARIO - BINARY TREE
+
+ Es una estructura de datos en la cual cada nodo puede tener un hijo izquierdo y un hijo derecho. No pueden tener más de dos hijos (de ahí el nombre "binario"). Usos comunes de los árboles binarios son los árboles binarios de búsqueda, los montículos binarios y Codificación de Huffman.
+
+<span class="subtitulo">Estructura Básica</span>
+
+ ![binary tree - parts](../CLASE_CPP/resource/img/arbol-binario_partes.jfif)
+
+<span class="subtitulo">Tipos de árboles</span>
+
+ ![binary tree - types](../CLASE_CPP/resource/img/arbol-binario_tipos.png)
+
+
+<span class="subtitulo">CODE</span>
+
+```cpp 
+struct nodo
+{
+  int nro;
+  struct nodo *izq, *der;
+};
+
+typedef struct nodo *ABB;
+/* es un puntero de tipo nodo que hemos llamado ABB, que ulitizaremos
+   para mayor facilidad de creacion de variables */
+```
+
+<span class="subtitulo">Procedimientos básicos</span>
+
+1. Insertar     
+2. Búsqueda preOrden            
+3. Búsqueda enOrden     
+4. Búsqueda postOrden       
+5. Ver árbol            
+
+
+
+  
+
+<div class="container">
+<div class="indicador"> SEMANdfgdfgdfgRBOLES- 15.08.2022 </div><br>
 
 ## ARBOL BINARIO - BINARY TREE
 
