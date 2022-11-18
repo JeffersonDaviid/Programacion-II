@@ -194,14 +194,12 @@ RECURSOS
 <span class="subtitulo">hola</span>
 
 ```cpp 
-
+int x = 23;
 ```
 # 🙂SEMANA 3
 
 
 
-<div class="container">
-<div class="indicador"> SEMANA 13:  ÁRBOLES- 15.08.2022 </div><br>
 
 ## ARBOL BINARIO - BINARY TREE
 
