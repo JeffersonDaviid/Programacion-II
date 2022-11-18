@@ -239,6 +239,5 @@ typedef struct nodo *ABB;
 5. Ver árbol            
 
 
-</div>
-</div>	
+
   
