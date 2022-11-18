@@ -143,7 +143,7 @@ strong {
    background-color: #ffa20088 !important;
 }
 </style>
-
+<link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/226/226777.png">
 <center>
 <span class="title"> PROGRAMACION II </span><br>
 <span class="tag"> < </span>
