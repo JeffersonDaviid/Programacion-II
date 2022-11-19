@@ -152,7 +152,7 @@ strong {
 <span class="bimestre"> I BIMESTRE </span></center>
 
 <p style="text-align:center;">
-   <img style="height:100px" loop="infinite"
+   <img style="height:100px;background-color: transparent;" loop="infinite"
    src="https://c.tenor.com/2Wu29iaHSYYAAAAi/coffee-lover-hot-coffee.gif"><br>
    <audio controls autoplay src="otrosNoTocar\sonido.mp3" ></audio>
 </p>
