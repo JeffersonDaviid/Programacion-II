@@ -152,8 +152,9 @@ strong {
 <span class="bimestre"> I BIMESTRE </span></center>
 
 <p style="text-align:center;">
-<img style="height:100px;" loop=infinite src="https://c.tenor.com/2Wu29iaHSYYAAAAi/coffee-lover-hot-coffee.gif"><br>
-<audio src="otrosNoTocar\sonido.mp3" controls autoplay></audio>
+   <img style="height:100px" loop="infinite"
+   src="https://c.tenor.com/2Wu29iaHSYYAAAAi/coffee-lover-hot-coffee.gif"><br>
+   <audio controls autoplay src="otrosNoTocar\sonido.mp3" ></audio>
 </p>
 
 
