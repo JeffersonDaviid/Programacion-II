@@ -151,6 +151,11 @@ strong {
 <span class="tag"> /> </span><br>
 <span class="bimestre"> I BIMESTRE </span></center>
 
+<p style="text-align:center;">
+<img style=height:100px; loop=infinite src="https://c.tenor.com/2Wu29iaHSYYAAAAi/coffee-lover-hot-coffee.gif"><br>
+<audio src="otrosNoTocar\sonido.mp3" controls autoplay></audio>
+</p>
+
 
 # 🤣SEMANA 1
 ## PREPARANDO NUESTRAS HERRAMIENTAS...
@@ -164,7 +169,6 @@ Tiene que tener:
 
 Java tiene un interprete para cada tipo de sistema: Windows, OS, Linux... hay que descargar el interprete para cada sistema operativo. Transforma el programa en `byte code` "ceros y unos".
 
-
 ### INSTALAR
 
 - EXTENSION PACK FOR JAVA
@@ -174,8 +178,7 @@ Java tiene un interprete para cada tipo de sistema: Windows, OS, Linux... hay qu
 ### COMANDOS
  - CTRL + SHIFT : Multicursor lineal vertical
 
-
-## GIT REPOSITORIO - ALL CODE
+### GIT REPOSITORIO - ALL CODE
 
 gh repo clone JeffersonDaviid/Programacion-II
 
@@ -185,7 +188,7 @@ gh repo clone JeffersonDaviid/Programacion-II
 
 - `git init`: Iniciar el control de versiones
 - `git add .`: agrega todos los archivos al stage
-- `git commit -m "mesaje"`: Mensaje clave del commit, ser puntual no detallado
+- `git commit -m "mensaje"`: Mensaje clave del commit, ser puntual no detallado
 - `git push`: envía los cambios a la nube
 - `git status -s`: Ver estado de los archivos
 
@@ -204,7 +207,7 @@ gh repo clone JeffersonDaviid/Programacion-II
 # 😆SEMANA 2
 ## Structura Básica
 
-```python 
+```java
 public class App {
    public static void main(String args[]) {
       System.out.println("Hola Mundo :)");
@@ -215,6 +218,8 @@ public class App {
 
 ## Bibliotecas
 Aquí algunas de las librerias más usadas y básicas, librerias del propio lenguaje, NO LIBRERIAS EXTERNAS.
+
+### SCANNER
 
 > import java.until.Scanner;     
 > Scanner xxxx = new Scanner(System.in); // crear un objeto entrada     
