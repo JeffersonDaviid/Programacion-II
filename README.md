@@ -1,7 +1,4 @@
 [Link README](https://jeffersondaviid.github.io/Programacion-II/)
-<head>
-    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/226/226777.png">
-</head>
 
 <style>
 @import url('https://fonts.cdnfonts.com/css/breakaway');
@@ -151,7 +148,7 @@ strong {
 <span class="title"> PROGRAMACION II </span><br>
 <span class="tag"> < </span>
 <span class="autor">JEFFERSON DAVID</span>
-<span class="tag"> /> </span><br><br>
+<span class="tag"> /> </span><br>
 <span class="bimestre"> I BIMESTRE </span></center>
 
 
@@ -183,104 +180,56 @@ Java tiene un interprete para cada tipo de sistema: Windows, OS, Linux... hay qu
 gh repo clone JeffersonDaviid/Programacion-II
 
 
+## GIT 
+### Estos son los comandos más utilizados en Git
+
+- `git init`: Iniciar el control de versiones
+- `git add .`: agrega todos los archivos al stage
+- `git commit -m "mesaje"`: Mensaje clave del commit, ser puntual no detallado
+- `git push`: envía los cambios a la nube
+- `git status -s`: Ver estado de los archivos
+
+### Comandos necesarios pero no muy utilizados en Git
+- `git config --global user.name "mi nombre"`: nombre usuario global
+- `git config --global user.email "myemail@example.com"`: email del git
+- `git log --oneline`: lista de todos los commits descendentemente
+- `git remote add origin "link que github nos da al momento de crear el repositorio"`
+- `git push -u origin master/main`: aquí podemos elegir pero por temas políticos se elige main
+
+
 ---
 ---
 
 
 # 😆SEMANA 2
+## Structura Básica
 
+```python 
+public class App {
+   public static void main(String args[]) {
+      System.out.println("Hola Mundo :)");
+   }
+}
+```
+
+
+## Bibliotecas
+Aquí algunas de las librerias más usadas y básicas, librerias del propio lenguaje, NO LIBRERIAS EXTERNAS.
+
+> import java.until.Scanner;     
+> Scanner xxxx = new Scanner(System.in); // crear un objeto entrada     
+> int valor = xxxx.nextInt(); // usar en numeros      
+> string valor = xxxx.nextLine(); // usar en texto    
 
 RECURSOS
-<blockquote class="warning">NotasImportantes</blockquote>
+<blockquote class="warning">NotasImportantes </blockquote>
 <blockquote class="sky">NotasImportantes</blockquote>
 <h3 class="center subtitulo"> SUBTITUTLO🧠 </h3>
 <span class="subtitulo">hola</span>
 
 ```python 
-int x = 23;
+int hola = 23;0
 ```
 # 🙂SEMANA 3
 
 
-
-
-## ARBOL BINARIO - BINARY TREE
-
- Es una estructura de datos en la cual cada nodo puede tener un hijo izquierdo y un hijo derecho. No pueden tener más de dos hijos (de ahí el nombre "binario"). Usos comunes de los árboles binarios son los árboles binarios de búsqueda, los montículos binarios y Codificación de Huffman.
-
-<span class="subtitulo">Estructura Básica</span>
-
- ![binary tree - parts](../CLASE_CPP/resource/img/arbol-binario_partes.jfif)
-
-<span class="subtitulo">Tipos de árboles</span>
-
- ![binary tree - types](../CLASE_CPP/resource/img/arbol-binario_tipos.png)
-
-
-<span class="subtitulo">CODE</span>
-
-```cpp 
-struct nodo
-{
-  int nro;
-  struct nodo *izq, *der;
-};
-
-typedef struct nodo *ABB;
-/* es un puntero de tipo nodo que hemos llamado ABB, que ulitizaremos
-   para mayor facilidad de creacion de variables */
-```
-
-<span class="subtitulo">Procedimientos básicos</span>
-
-1. Insertar     
-2. Búsqueda preOrden            
-3. Búsqueda enOrden     
-4. Búsqueda postOrden       
-5. Ver árbol            
-
-
-
-  
-
-<div class="container">
-<div class="indicador"> SEMANdfgdfgdfgRBOLES- 15.08.2022 </div><br>
-
-## ARBOL BINARIO - BINARY TREE
-
- Es una estructura de datos en la cual cada nodo puede tener un hijo izquierdo y un hijo derecho. No pueden tener más de dos hijos (de ahí el nombre "binario"). Usos comunes de los árboles binarios son los árboles binarios de búsqueda, los montículos binarios y Codificación de Huffman.
-
-<span class="subtitulo">Estructura Básica</span>
-
- ![binary tree - parts](../CLASE_CPP/resource/img/arbol-binario_partes.jfif)
-
-<span class="subtitulo">Tipos de árboles</span>
-
- ![binary tree - types](../CLASE_CPP/resource/img/arbol-binario_tipos.png)
-
-
-<span class="subtitulo">CODE</span>
-
-```cpp 
-struct nodo
-{
-  int nro;
-  struct nodo *izq, *der;
-};
-
-typedef struct nodo *ABB;
-/* es un puntero de tipo nodo que hemos llamado ABB, que ulitizaremos
-   para mayor facilidad de creacion de variables */
-```
-
-<span class="subtitulo">Procedimientos básicos</span>
-
-1. Insertar     
-2. Búsqueda preOrden            
-3. Búsqueda enOrden     
-4. Búsqueda postOrden       
-5. Ver árbol            
-
-
-
-  
