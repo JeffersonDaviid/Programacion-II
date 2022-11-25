@@ -19,5 +19,7 @@ public class App {
         JOptionPane.showMessageDialog(null, "La cadena es: " + cadena);
         JOptionPane.showMessageDialog(null, "El valor entero es: " + entero);
         JOptionPane.showMessageDialog(null, "El caracter escrito es: " + letra);
+        JOptionPane.showMessageDialog(null, "Descanza guerrero xd\nJefferSon David");
+
     }
 }
