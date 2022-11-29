@@ -256,7 +256,7 @@ public class XXXX{
 ```
 ### PARAMETROS
 
-Argumentos de una funci�n.
+Argumentos de una función.
 > `main (String variable){...codigo}`
 
 ```java
@@ -273,7 +273,7 @@ Aquí algunas de las librerias más usadas y básicas, librerias del propio leng
 
 ### SCANNER
 
-> import java.until.Scanner;     
+> import java.util.Scanner;     
 > Scanner xxxx = new Scanner(System.in); // crear un objeto entrada     
 > int valor = xxxx.nextInt(); // usar en numeros      
 > string valor = xxxx.nextLine(); // usar en texto    
@@ -289,4 +289,18 @@ int hola = 23;0
 ```
 # 🙂SEMANA 3
 
+# POO
+
+## Creación de Métodos
+
+```java
+public void metodo(...){
+
+}
+```
+Detalles:
+1. `public :` modificador de acceso
+2. `void :` valor de retorno (puede ir int, string...) 
+3. `metodo :` nombre del método
+4. `... :` argumentos que recive el método
 
