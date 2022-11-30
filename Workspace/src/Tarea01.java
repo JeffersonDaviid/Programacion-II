@@ -3,16 +3,12 @@ import javax.swing.JOptionPane;
 
 public class Tarea01 {
     public static void presentarObjeto(String objetos[]) {
-        int elemento = 0;
         for (int objeto = 0; objeto < objetos.length; objeto++)
-            if (objetos[objeto] != null)
-                if (!objetos[objeto].equals("n")) {
-                    elemento++;
-                    System.out.println(elemento + ": " + objetos[objeto] + ", ");
-                }
+            if (objetos[objeto] != null && !objetos[objeto].equals("n"))
+                System.out.println("- " + objetos[objeto] + ", ");
     }
 
-    public static boolean verificarElemento(String grupo[], String elemento) {
+    public static boolean verificarElemento(String elemento, String grupo[]) {
         for (int elem = 0; elem < grupo.length; elem++)
             if (grupo[elem] != null)
                 if (grupo[elem].equals(elemento) && !grupo[elem].equals("n"))
@@ -20,11 +16,23 @@ public class Tarea01 {
         return false;
     }
 
+    public static void moverElemento(String valor, String grupoOrigen[], String grupoLlegada[]) {
+        for (int elemento = 0; elemento < grupoOrigen.length; elemento++)
+            if (grupoOrigen[elemento] == null || grupoOrigen[elemento].equals(valor))
+                grupoOrigen[elemento] = "n";
+        for (int elemento = 0; elemento < grupoLlegada.length; elemento++)
+            if (grupoLlegada[elemento] == null || grupoLlegada[elemento].equals("n")) {
+                grupoLlegada[elemento] = valor;
+                break;
+            }
+    }
+
     public static void main(String[] args) throws Exception {
         Scanner teclado = new Scanner(System.in);
         boolean p_izquierda = true;
         String izquierda[] = new String[3];
         String derecha[] = new String[3];
+        String eleccion;
         izquierda[0] = "L";
         izquierda[1] = "C";
         izquierda[2] = "U";
@@ -35,62 +43,33 @@ public class Tarea01 {
             presentarObjeto(derecha);
             if (p_izquierda == true) {
                 System.out.println("\nPorfavor ingrese la inicial del elemento a mover a la derecha: ");
-                String eleccion = teclado.next().toUpperCase();
+                eleccion = teclado.next().toUpperCase();
                 if ((eleccion.equals("L") || eleccion.equals("C") || eleccion.equals("U"))
-                        && verificarElemento(izquierda, eleccion)) {
-                    for (int objetoIzquierda = 0; objetoIzquierda < izquierda.length; objetoIzquierda++) {
-                        if (izquierda[objetoIzquierda].equals(eleccion)) {
-                            izquierda[objetoIzquierda] = "n";
-                            break;
-                        }
-                    }
-                    for (int objetoDerecha = 0; objetoDerecha < derecha.length; objetoDerecha++) {
-                        if (derecha[objetoDerecha] == null || derecha[objetoDerecha].equals("n")) {
-                            derecha[objetoDerecha] = eleccion;
-                            break;
-                        }
-                    }
+                        && verificarElemento(eleccion, izquierda)) {
+                    moverElemento(eleccion, izquierda, derecha);
                     p_izquierda = false;
-                    if ((verificarElemento(izquierda, "L") && verificarElemento(izquierda, "C"))
-                            || verificarElemento(izquierda, "C") && verificarElemento(izquierda, "U")) {
+                    if ((verificarElemento("L", izquierda) && verificarElemento("C", izquierda))
+                            || verificarElemento("C", izquierda) && verificarElemento("U", izquierda)) {
                         JOptionPane.showMessageDialog(null, "You lost :(");
                         return;
                     }
                 }
             } else {
                 System.out.println(
-                        "\nEsta por volver a la izquierda, ¿Desea volver con un elemento? \n(Si) ingrese inicial del elemento\n(No) presione 0 : ");
-                String eleccion = teclado.next().toUpperCase();
+                        "\nEsta por volver a la izquierda, ¿Desea volver con un elemento? \n(Si) ingrese inicial del elemento\n(No) presione cualquier tecla: ");
+                eleccion = teclado.next().toUpperCase();
                 if ((eleccion.equals("L") || eleccion.equals("C") || eleccion.equals("U"))
-                        && verificarElemento(derecha, eleccion)) {
-                    for (int objetoDerecha = 0; objetoDerecha < derecha.length; objetoDerecha++) {
-                        if (derecha[objetoDerecha].equals(eleccion)) {
-                            derecha[objetoDerecha] = "n";
-                            break;
-                        }
-                    }
-                    for (int objetoIzquierda = 0; objetoIzquierda < izquierda.length; objetoIzquierda++) {
-                        if (izquierda[objetoIzquierda] == null || izquierda[objetoIzquierda].equals("n")) {
-                            izquierda[objetoIzquierda] = eleccion;
-                            break;
-                        }
-                    }
-                    p_izquierda = true;
-                }
-                if (eleccion.equals("0"))
-                    p_izquierda = true;
-                if ((verificarElemento(derecha, "L") && verificarElemento(derecha, "C"))
-                        || verificarElemento(derecha, "C") && verificarElemento(derecha, "U")) {
+                        && verificarElemento(eleccion, derecha))
+                    moverElemento(eleccion, derecha, izquierda);
+                p_izquierda = true;
+                if ((verificarElemento("L", derecha) && verificarElemento("C", derecha))
+                        || verificarElemento("C", derecha) && verificarElemento("U", derecha)) {
                     JOptionPane.showMessageDialog(null, "You lost :(");
                     return;
                 }
             }
-            if (verificarElemento(derecha, "L") && verificarElemento(derecha, "C") && verificarElemento(derecha, "U")) {
-                JOptionPane.showMessageDialog(null, "You Win :)");
-                return;
-            }
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
-        } while (1 < 2);
+        } while (verificarElemento("L", izquierda) || verificarElemento("C", izquierda)
+                || verificarElemento("U", izquierda));
+        JOptionPane.showMessageDialog(null, "You win :)");
     }
 }
