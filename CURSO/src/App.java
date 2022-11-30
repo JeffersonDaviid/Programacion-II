@@ -1,23 +1,13 @@
-import java.util.Scanner;
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
-public class App extends JFrame {
-    Scanner teclado = new Scanner(System.in); // Objeto de entrada teclado
-    private JLabel etiqueta;
-
-    public App() {
-        setLayout(null);
-        etiqueta = new JLabel("Jefferson David");
-        etiqueta.setBounds(0, 0, 300, 200);
-        add(etiqueta);
-    }
-
+public class App {
     public static void main(String args[]) {
-        App ventana = new App();
-        ventana.setBounds(0, 0, 400, 550);
-        ventana.setVisible(true);
-        ventana.setLocationRelativeTo(null);
-        ventana.setResizable(true);
+        Operaciones op = new Operaciones();
+
+        op.leerNumeros();
+        // System.out.println("El resultado de tu suma es: " + op.sumar());
+        // JOptionPane.showMessageDialog(null, "El resultado de tu suma es: " +
+        // op.sumar());
 
     }
 }

@@ -206,7 +206,58 @@ gh repo clone JeffersonDaviid/Programacion-II
 
 
 # 😆SEMANA 2
-## Structura Básica
+
+## CONOCIMIENTOS BASICOS
+### Métodos 
+- Retornan valor : `funcion`
+- no retona valor : `procedimiento` - metodos
+
+### Structura Básica
+
+<blockquote class="warning">Regla de Java:<br>El nombre del archivo debe ser EL MISMO que el nombre de la clase y tiene que ir en Mayusculas</blockquote><br>
+
+### Tipo de datos
+
+#### Propios de Java
+- String
+- Integer
+- Bool
+- Int
+- ...
+#### Primitivos
+- bool
+- int
+- ...
+
+> Standart codif. : `camelCase`
+
+### 
+Propiedad = `Ambito` + variable  
+- Ambito: public, private, protect
+  >Ejemplo:       
+  ``` java
+  public class XXXX{
+     public Integer edadUsuario = 21; // propiedad
+  }
+  ```
+<blockquote class="warning">Hay que tener MUCHO CUIDADO con el TIPO DE DATO, usar SABIAMENTE.</blockquote><br>
+
+### VARIABLE VS PROPIEDAD
+
+``` java
+public class XXXX{
+   public Integer edad = 21; // propiedad
+   public static void main(){
+      String nombreUsuario = "David"; // variable
+      String nombre; // ? declaración
+      nombre = "Jefferson" // ? inicialización
+   }
+}
+```
+### PARAMETROS
+
+Argumentos de una función.
+> `main (String variable){...codigo}`
 
 ```java
 public class App {
@@ -222,7 +273,7 @@ Aquí algunas de las librerias más usadas y básicas, librerias del propio leng
 
 ### SCANNER
 
-> import java.until.Scanner;     
+> import java.util.Scanner;     
 > Scanner xxxx = new Scanner(System.in); // crear un objeto entrada     
 > int valor = xxxx.nextInt(); // usar en numeros      
 > string valor = xxxx.nextLine(); // usar en texto    
@@ -238,4 +289,18 @@ int hola = 23;0
 ```
 # 🙂SEMANA 3
 
+# POO
+
+## Creación de Métodos
+
+```java
+public void metodo(...){
+
+}
+```
+Detalles:
+1. `public :` modificador de acceso
+2. `void :` valor de retorno (puede ir int, string...) 
+3. `metodo :` nombre del método
+4. `... :` argumentos que recive el método
 
