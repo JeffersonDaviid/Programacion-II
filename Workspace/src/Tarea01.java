@@ -36,8 +36,8 @@ public class Tarea01 {
             if (p_izquierda == true) {
                 System.out.println("\nPorfavor ingrese la inicial del elemento a mover a la derecha: ");
                 String eleccion = teclado.next().toUpperCase();
-                if (verificarElemento(izquierda, eleccion)
-                        && (eleccion.equals("L") || eleccion.equals("C") || eleccion.equals("U"))) {
+                if ((eleccion.equals("L") || eleccion.equals("C") || eleccion.equals("U"))
+                        && verificarElemento(izquierda, eleccion)) {
                     for (int objetoIzquierda = 0; objetoIzquierda < izquierda.length; objetoIzquierda++) {
                         if (izquierda[objetoIzquierda].equals(eleccion)) {
                             izquierda[objetoIzquierda] = "n";
@@ -61,8 +61,8 @@ public class Tarea01 {
                 System.out.println(
                         "\nEsta por volver a la izquierda, ¿Desea volver con un elemento? \n(Si) ingrese inicial del elemento\n(No) presione 0 : ");
                 String eleccion = teclado.next().toUpperCase();
-                if (verificarElemento(derecha, eleccion)
-                        && (eleccion.equals("L") || eleccion.equals("C") || eleccion.equals("U"))) {
+                if ((eleccion.equals("L") || eleccion.equals("C") || eleccion.equals("U"))
+                        && verificarElemento(derecha, eleccion)) {
                     for (int objetoDerecha = 0; objetoDerecha < derecha.length; objetoDerecha++) {
                         if (derecha[objetoDerecha].equals(eleccion)) {
                             derecha[objetoDerecha] = "n";
