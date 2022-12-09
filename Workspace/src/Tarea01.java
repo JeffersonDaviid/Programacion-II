@@ -40,12 +40,12 @@ public class Tarea01 {
             presentarElementos(izquierda, "\nLos 3 elementos deben cruzar al otro lado del rio\nREGLAS DEL JUEGO:\n Si esta solo el lobo con la caperucita ( marcha la caperucita )\n Si la caperucita esta solo con las uvas ( marchan las uvas )\n\nElementos a la izquierda del rio");
             presentarElementos(derecha, "\nElementos a la derecha del rio");
             if (p_izquierda == true) {
-                System.out.println("\nPorfavor ingrese la inicial del elemento a mover a la derecha ");
+                System.out.println("\nEsta por digirse a la derecha, ¿Desea llevar un elemento? \n(Si) ingrese inicial del elemento\n(No) presione cualquier tecla ");
                 eleccion = teclado.next().toUpperCase();
                 moverElemento(eleccion, izquierda, derecha);
                 p_izquierda = false;
             } else {
-                System.out.println("\nEsta por volver a la izquierda, ¿Desea volver con un elemento? \n(Si) ingrese inicial del elemento\n(No) presione cualquier tecla ");
+                System.out.println("\nEsta por volver a la izquierda, ¿Desea llevar un elemento? \n(Si) ingrese inicial del elemento\n(No) presione cualquier tecla ");
                 eleccion = teclado.next().toUpperCase();
                 moverElemento(eleccion, derecha, izquierda);
                 p_izquierda = true;
