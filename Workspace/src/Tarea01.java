@@ -17,16 +17,19 @@ public class Tarea01 {
 
     private static void moverElemento(String valor, String grupoSalida[], String grupoLlegada[]) {
         for (int elemento = 0; elemento < grupoSalida.length; elemento++)
-            if (grupoSalida[elemento].equals(valor))
+            if (verificarElemento(valor, grupoSalida) && grupoSalida[elemento].equals(valor)
+                    && !grupoSalida[elemento].equals("n"))
                 grupoSalida[elemento] = "n";
         for (int elemento = 0; elemento < grupoLlegada.length; elemento++)
-            if (grupoLlegada[elemento].equals("n")) {
+            if (grupoLlegada[elemento].equals("n") && (valor.equals("L") || valor.equals("C") || valor.equals("U"))) {
                 grupoLlegada[elemento] = valor;
                 break;
             }
         if ((verificarElemento("L", grupoSalida) && verificarElemento("C", grupoSalida))
                 || verificarElemento("C", grupoSalida) && verificarElemento("U", grupoSalida)) {
-            System.out.println("You lost :(");
+            System.out.println(verificarElemento("L", grupoSalida) && verificarElemento("C", grupoSalida)
+                    ? "\nPERDISTE :(, Lobo se comio a Caperucita"
+                    : "\nPERDISTE :(, Caperucita se comió las Uvas");
             System.exit(0);
         }
     }
@@ -44,23 +47,18 @@ public class Tarea01 {
             if (p_izquierda == true) {
                 System.out.println("\nPorfavor ingrese la inicial del elemento a mover a la derecha ");
                 eleccion = teclado.next().toUpperCase();
-                if (verificarElemento(eleccion, izquierda)
-                        && (eleccion.equals("L") || eleccion.equals("C") || eleccion.equals("U"))) {
-                    moverElemento(eleccion, izquierda, derecha);
-                    p_izquierda = false;
-                }
+                moverElemento(eleccion, izquierda, derecha);
+                p_izquierda = false;
             } else {
                 System.out.println(
                         "\nEsta por volver a la izquierda, ¿Desea volver con un elemento? \n(Si) ingrese inicial del elemento\n(No) presione cualquier tecla ");
                 eleccion = teclado.next().toUpperCase();
-                if (verificarElemento(eleccion, derecha)
-                        && (eleccion.equals("L") || eleccion.equals("C") || eleccion.equals("U")))
-                    moverElemento(eleccion, derecha, izquierda);
+                moverElemento(eleccion, derecha, izquierda);
                 p_izquierda = true;
             }
         } while (verificarElemento("L", izquierda) || verificarElemento("C", izquierda)
                 || verificarElemento("U", izquierda));
-        System.out.println("You win :)");
+        System.out.println("FELICIDADES, todos los elemento lograron cruzar el río :)");
         teclado.close();
     }
 }
