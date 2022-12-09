@@ -61,7 +61,6 @@ public class Tarea01 {
         } while (verificarElemento("L", izquierda) || verificarElemento("C", izquierda)
                 || verificarElemento("U", izquierda));
         System.out.println("You win :)");
-
+        teclado.close();
     }
-
 }
