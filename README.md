@@ -278,6 +278,44 @@ Aquí algunas de las librerias más usadas y básicas, librerias del propio leng
 > int valor = xxxx.nextInt(); // usar en numeros      
 > string valor = xxxx.nextLine(); // usar en texto    
 
+# 🙂SEMANA 3
+
+# POO
+
+## Creación de Métodos
+### Métodos sin retorno de valor
+```java
+public void metodo(){
+   // Instrucciones
+}
+```
+
+Detalles:
+1. `public :` modificador de acceso
+2. `void :` valor de retorno (puede ir int, string...) 
+3. `metodo :` nombre del método
+4. `... :` argumentos que recive el método
+
+### Métodos con retorno
+```java
+public int metodo(int a, int b){
+   return a + b;
+}
+```
+```java
+public float metodo(int a, float b){
+   return a + b;
+}
+```
+```java
+public float metodo(float a, float b){
+   return a + b;
+}
+```
+<blockquote class="sky">Puede exitir funciones con el mismo nombre pero DEBEN SER DE DISTINTO TIPO DE PARAMETRO<br>En el ejemplo anterior tenemos 3 sumas</blockquote>
+
+
+
 RECURSOS
 <blockquote class="warning">NotasImportantes </blockquote>
 <blockquote class="sky">NotasImportantes</blockquote>
@@ -287,20 +325,3 @@ RECURSOS
 ```python 
 int hola = 23;0
 ```
-# 🙂SEMANA 3
-
-# POO
-
-## Creación de Métodos
-
-```java
-public void metodo(...){
-
-}
-```
-Detalles:
-1. `public :` modificador de acceso
-2. `void :` valor de retorno (puede ir int, string...) 
-3. `metodo :` nombre del método
-4. `... :` argumentos que recive el método
-

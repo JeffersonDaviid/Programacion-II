@@ -15,7 +15,7 @@ public class Tarea01 {
         return false;
     }
 
-    public static void moverElemento(String valor, String grupoSalida[], String grupoLlegada[]) {
+    private static void moverElemento(String valor, String grupoSalida[], String grupoLlegada[]) {
         for (int elemento = 0; elemento < grupoSalida.length; elemento++)
             if (grupoSalida[elemento].equals(valor))
                 grupoSalida[elemento] = "n";
@@ -39,7 +39,7 @@ public class Tarea01 {
         String derecha[] = { "n", "n", "n" };
         do {
             presentarElementos(izquierda,
-                    "\nLos 3 elementos deben cruzar al otro lado del rio\nREGLAS DEL JUEGO:\n  Si esta solo el lobo con la caperucita ( marcha la caperucita )\n  Si la caperucita esta solo con las uvas ( marchan las uvas )\n\nElementos a la izquierda del rio");
+                    "\nLos 3 elementos deben cruzar al otro lado del rio\nREGLAS DEL JUEGO:\n Si esta solo el lobo con la caperucita ( marcha la caperucita )\n Si la caperucita esta solo con las uvas ( marchan las uvas )\n\nElementos a la izquierda del rio");
             presentarElementos(derecha, "\nElementos a la derecha del rio");
             if (p_izquierda == true) {
                 System.out.println("\nPorfavor ingrese la inicial del elemento a mover a la derecha ");
@@ -61,5 +61,7 @@ public class Tarea01 {
         } while (verificarElemento("L", izquierda) || verificarElemento("C", izquierda)
                 || verificarElemento("U", izquierda));
         System.out.println("You win :)");
+
     }
+
 }
