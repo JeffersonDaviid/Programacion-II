@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Tarea01 {
     public static void presentarElementos(String objetos[], String etiqueta) {
         System.out.println(etiqueta);
