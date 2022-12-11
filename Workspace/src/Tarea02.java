@@ -29,16 +29,13 @@ public class Tarea02 {
         int aux1 = 0, aux2 = 0;
         for (int i = 0; elementos.length - i >= nroCombinacion; i++) {
             aux1 = i + 1;
-            while (true) {
+            while (elementos.length - aux1 >= nroCombinacion - 1) {
                 aux2 = aux1 + 1;
                 while (elementos.length - aux2 > 0) {
                     System.out.println("[ " + elementos[i] + " " + elementos[aux1] + " " + elementos[aux2] + " ]");
                     aux2++;
                 }
                 aux1++;
-                if (elementos.length - aux1 == nroCombinacion - 1)
-                    continue;
-                break;
             }
         }
     }
