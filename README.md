@@ -316,6 +316,71 @@ public float metodo(float a, float b){
 
 
 
+# 😶SEMANA 5
+
+## HERENCIA
+
+Permite la reutilizar código
+
+### Nomenclatura
+
+Clase original   =  clase Padre  = Superclase      
+Clase secundaria =  clase hijo   =  Subclase
+
+## CONSTRUCTOR
+
+Tiene que tener el mismo nombre de la clase;
+
+> Para pasar la herencia a los hijos usamos `EXTENDS nombreClaseHijo`
+
+
+### CONSTRUCTOR CON PARAMETROS
+```java
+public Padre(String nombre, String ocupacion, String sexo, int edad) {
+   this.nombre = nombre;
+   this.ocupacion = ocupacion;
+   this.sexo = sexo;
+   this.edad = edad;
+}
+```
+> `this` : Referenciar variables dentro del CONSTRUCTOR de las clase.
+
+### NOTACION PARA AMBITOS
+- `+` public
+- `-` private
+- `~` paquete
+- `#` protect
+### NOTACION PARA METODOS
+- `+` public
+- `-` private
+- `~` paquete
+- `#` protect
+
+ 
+### DIAGRAMA `OML`
+
+#### POO
+- Mejorar el dieño
+- Permite la reutilización
+- Facilita la extensión
+- Problema: acoplamiento
+
+
+### OBJETOS
+La 'variable' es el objeto que tiene referencia a la memoria RAM
+
+```java 
+Vehiculo v = new Vehiculo();
+Coche c = new Coche();
+Barco b = new Barco();
+```
+
+<blockquote class="warning">En la SUBCLASE <br>Antes de que se ejecute el constructor </blockquote><br>
+
+### SOBRESCRIBIR METODOS DEL PADRE
+
+
+
 RECURSOS
 <blockquote class="warning">NotasImportantes </blockquote>
 <blockquote class="sky">NotasImportantes</blockquote>
@@ -323,5 +388,5 @@ RECURSOS
 <span class="subtitulo">hola</span>
 
 ```python 
-int hola = 23;0
+
 ```
