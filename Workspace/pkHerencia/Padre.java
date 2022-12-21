@@ -1,7 +1,5 @@
 package Workspace.pkHerencia;
 
-import java.lang.reflect.Constructor;
-
 public class Padre {
     // Propiedades
     private String nombre;

@@ -380,6 +380,24 @@ Barco b = new Barco();
 ### SOBRESCRIBIR METODOS DEL PADRE
 
 
+# 😐SEMANA 6
+ 
+### MODELADO O.O UML
+
+- `→`  dirección del modelo
+
+### COMPONENTES
+
+- `uso` "____________" bidirección "-----→" linea de dirección     
+- `inclusión`  "_ _ _ _ _ _ _ _" encima de la barra lleva _include_, es como para describir más el programa.
+- `extension`  "-------→" encima de la barra lleva _extiende_, significa que depende de algo (más opciones para el usuario ejemplo un clienete puede pagar de diferenc).
+- `Generalizaciones`  "-→" sirve para clasificar dato.
+
+
+_exclude :_ va en dirección de la clase que la contiene, generalemente se usan entre caso de uso.   
+_include :_ va en sentido de elemento opcional
+
+
 
 RECURSOS
 <blockquote class="warning">NotasImportantes </blockquote>
