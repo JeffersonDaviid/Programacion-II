@@ -1,5 +1,5 @@
-import Workspace.pkHerencia.Hijo;
-import Workspace.pkHerencia.Padre;
+import pkHerencia.Hijo;
+import pkHerencia.Padre;
 
 public class E03Herencia {
 

@@ -1,29 +1,69 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Workspace.pkEstudiante.Alumno;
-import Workspace.pkEstudiante.Materia;
+import pkEstudiante.Alumno;
+import pkEstudiante.Materia;
 
-public class Tarea03 extends Alumno {
+public class Tarea03 {
 
-    public static void addStudent(ArrayList<Alumno> lsAlumnos, String nombre, int codigo, boolean depresion) {
+    public static int menu() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("\t\tMENU\n");
+
+        System.out.println(" 1. Agregar estudiante \n 2. Consultar estudiante\n 0. Salir");
+        int option = Integer.parseInt(sc.nextLine());
+        return option;
+    }
+
+    /**
+     * Agrega un nuevo estudiante
+     * 
+     * @param lsAlumnos lista de arraylist donde se guardará el nuevo alumno
+     */
+    public static void addStudent(ArrayList<Alumno> lsAlumnos) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("\nIngrese el nombre del estudiante: ");
+        String nombre = sc.nextLine().toUpperCase();
+        // sc.nextLine(); // Limpiar buffer :(
+        System.out.println("Ingrese el codigo único del estudiante: ");
+        int codigo = sc.nextInt();
+        boolean depresion = false;
+
         Alumno e = new Alumno(nombre, codigo, depresion);
         for (int i = 0; i < lsAlumnos.size(); i++) {
             // Si existe un estudiante que tiene el mismo código NO lo agregamos
             // para que no sobreescriba al otro estudiante que estaba primero
-            if (e.codigo == lsAlumnos.get(i).codigo) {
-                System.out.println("\n\n\t\t\tWARNING! Código ocupado por " + lsAlumnos.get(i).nombre
+            if (e.getCodigo() == lsAlumnos.get(i).getCodigo()) {
+                System.out.println("\n\n\t\t\tWARNING! Código ocupado por " + lsAlumnos.get(i).getNombre()
                         + " no es posible sobreescribir, intente nuevamente.\n\n\n\n");
                 return;
             }
         }
         lsAlumnos.add(e);
-        System.out.println("Estudiante " + e.nombre + " fue agregado exitosamente!\n\n\n");
+        System.out.println("Estudiante " + e.getNombre() + " fue agregado exitosamente!\n\n\n");
+    }
 
+    /**
+     * Buscar la posición en arrayList de un estudiante
+     * 
+     * @param lsAlumnos arrayList de los alumnos donde se buscará el estudiante
+     * @return devuelve la posición del estudiante
+     */
+    public static int searchStudent(ArrayList<Alumno> lsAlumnos) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese código de estudiante: ");
+        int codigo = sc.nextInt();
+        System.out.println("\n<> Lista total de estudiantes: ");
+        // Se puede mejorar con el INDEXOF pero me dio error + mimir time
+        for (int position = 0; position < lsAlumnos.size(); position++) {
+            System.out.println(lsAlumnos.get(position).getCodigo() + "  →  " + lsAlumnos.get(position).getNombre());
+            if (lsAlumnos.get(position).getCodigo() == codigo)
+                return position;
+        }
+        return -1;
     }
 
     public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
         ArrayList<Alumno> lsAlumnos = new ArrayList<Alumno>();
 
         // ESTUDIANTES POR DEFECTO
@@ -55,45 +95,35 @@ public class Tarea03 extends Alumno {
         Materia m6e2 = new Materia("ENGLISH ", 5, 11, 2);
         e2.lsMaterias.add(m6e2);
         lsAlumnos.add(e2);
+        Scanner sc = new Scanner(System.in);
 
         String option;
         do {
-            System.out.println("\t\tMENU\n");
+            switch (menu()) {
+                case 0:
+                    sc.close();
+                    return;
+                case 1:
+                    addStudent(lsAlumnos);
+                    break;
 
-            System.out.println(" 1. Agregar estudiante \n 2. Consultar estudiante\n 0. Salir");
-            option = sc.nextLine();
-            sc.nextLine();
-
-            if (option.equals("1")) {
-                System.out.println("\nIngrese el nombre del estudiante: ");
-                String nombre = sc.nextLine();
-                sc.nextLine(); // Limpiar buffer :(
-                System.out.println("Ingrese el codigo único del estudiante: ");
-                int codigo = sc.nextInt();
-                sc.nextLine(); // Limpiar buffer :(
-                boolean depresion = false;
-
-                addStudent(lsAlumnos, nombre.toUpperCase(), codigo, depresion);
-
-            } else if (option.equals("2")) {
-                System.out.println("Ingrese código de estudiante: ");
-                int code = sc.nextInt();
-                sc.nextLine(); // limpiar buffer :(
-                int posicion = searchStudent(code, lsAlumnos);
-                if (posicion > -1) {
-                    // "Inicio sesion de usuario, sí lo encotró"
-                    do {
-                        lsAlumnos.get(posicion).showStudent(lsAlumnos, posicion);
-                        System.out.println("\n\n 1. Agregar Materia \n 2. Salir\n");
-                        option = sc.nextLine();
-                        sc.nextLine(); // Borrar Buffer
-                        if (option.equals("1")) {
-                            lsAlumnos.get(posicion).addClass(lsAlumnos.get(posicion).lsMaterias);
-                        }
-                    } while (!option.equals("2"));
-                }
+                case 2:
+                    int posicion = searchStudent(lsAlumnos);
+                    if (posicion > -1) {
+                        // "Inicio sesion de usuario, sí lo encotró"
+                        do {
+                            lsAlumnos.get(posicion).showStudent(lsAlumnos, posicion);
+                            System.out.println("\n\n 1. Agregar Materia \n 2. Salir\n");
+                            option = sc.nextLine();
+                            if (option.equals("1")) {
+                                lsAlumnos.get(posicion).addClass(lsAlumnos.get(posicion).getLsMaterias());
+                            }
+                        } while (!option.equals("2"));
+                    }
+                    break;
+                default:
+                    break;
             }
-        } while (!option.equals("0") || option.equals(null));
-        sc.close();
+        } while (true);
     }
 }

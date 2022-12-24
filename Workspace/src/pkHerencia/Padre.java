@@ -1,4 +1,4 @@
-package Workspace.pkHerencia;
+package pkHerencia;
 
 public class Padre {
     // Propiedades
