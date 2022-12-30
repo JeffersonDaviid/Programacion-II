@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
 public class ExpresionRegular {
-    String nombre;
+    String dominio;
     String ip;
 
     public ExpresionRegular(String nombre, String ip) {
-        this.nombre = nombre;
+        this.dominio = nombre;
         this.ip = ip;
     }
 
@@ -23,11 +23,11 @@ public class ExpresionRegular {
         System.out.println("\n\n\tHistorial de navegación de Juanito\n");
         for (ExpresionRegular pagina : lsIps) {
             if (validarIPv4(ipDenied) && pagina.ip.equals(ipDenied)) {
-                System.out.println("\tJuanito ha sido restringido de ingresar a: ¡<" + pagina.nombre.toUpperCase()
+                System.out.println("\tJuanito ha sido restringido de ingresar a: ¡<" + pagina.dominio.toUpperCase()
                         + ">! con dirección IP: " + pagina.ip);
                 continue;
             }
-            System.out.println("Juanito ingreso a: <" + pagina.nombre + "> con dirección IP: " + pagina.ip);
+            System.out.println("Juanito ingreso a: <" + pagina.dominio + "> con dirección IP: " + pagina.ip);
         }
     }
 

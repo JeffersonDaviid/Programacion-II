@@ -10,7 +10,9 @@ public class Tarea03 {
         Scanner sc = new Scanner(System.in);
         System.out.println("\t\tMENU\n");
 
-        System.out.println(" 1. Agregar estudiante \n 2. Consultar estudiante\n 0. Salir");
+        System.out.println(" 1. Agregar estudiante \n" +
+                " 2. Consultar estudiante\n" +
+                " 0. Salir");
         int option = Integer.parseInt(sc.nextLine());
         return option;
     }
@@ -30,11 +32,10 @@ public class Tarea03 {
         boolean depresion = false;
 
         Alumno e = new Alumno(nombre, codigo, depresion);
-        for (int i = 0; i < lsAlumnos.size(); i++) {
-            // Si existe un estudiante que tiene el mismo código NO lo agregamos
+        for (Alumno lsAlumno : lsAlumnos) {
             // para que no sobreescriba al otro estudiante que estaba primero
-            if (e.getCodigo() == lsAlumnos.get(i).getCodigo()) {
-                System.out.println("\n\n\t\t\tWARNING! Código ocupado por " + lsAlumnos.get(i).getNombre()
+            if (e.getCodigo() == lsAlumno.getCodigo()) {
+                System.out.println("\n\n\t\t\tWARNING! Código ocupado por " + lsAlumno.getNombre()
                         + " no es posible sobreescribir, intente nuevamente.\n\n\n\n");
                 return;
             }
