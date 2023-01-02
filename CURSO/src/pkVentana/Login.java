@@ -133,7 +133,7 @@ public class Login extends JFrame {
 					}
 
 				} catch (Exception error) {
-					// TODO: handle excepti
+					JOptionPane.showMessageDialog(null, "No se puede conectar con la base de datos");
 				}
 
 			}
