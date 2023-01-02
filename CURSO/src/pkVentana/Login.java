@@ -134,6 +134,8 @@ public class Login extends JFrame {
 
 				} catch (Exception error) {
 					JOptionPane.showMessageDialog(null, "No se puede conectar con la base de datos");
+					// sudo /opt/lampp/lampp start -> inicar
+					// sudo /opt/lampp/lampp stop -> parar
 				}
 
 			}
