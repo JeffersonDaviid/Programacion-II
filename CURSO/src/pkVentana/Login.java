@@ -84,8 +84,13 @@ public class Login extends JFrame {
 		lbRol.setBounds(10, 285, 105, 14);
 		panelMain.add(lbRol);
 
+		// Forma actualizada de JComboBox
+		// String[] comboItems = { "-- Seleccione una opcion --", "Administrador",
+		// "Trabajador" };
+		// JComboBox<String> comboRoles = new JComboBox<>(comboItems);
 		JComboBox comboRoles = new JComboBox(new DefaultComboBoxModel(
 				new String[] { "-- Seleccione una opcion --", "Administrador", "Trabajador" }));
+
 		comboRoles.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		comboRoles.setToolTipText("");
 		comboRoles.setBounds(10, 310, 158, 29);

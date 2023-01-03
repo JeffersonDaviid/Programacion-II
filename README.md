@@ -397,8 +397,21 @@ Barco b = new Barco();
 _exclude :_ va en dirección de la clase que la contiene, generalemente se usan entre caso de uso.   
 _include :_ va en sentido de elemento opcional
 
+# SEMANA 7
 
+## INTERFAZ
 
+Si nos ponemos a pensar que cuando necesitamos una acción heredada de otra clase si o si debemos 
+
+| Propiedad       | CLASES                                   | INTERFAZ                                                                         |
+| --------------- | ---------------------------------------- | -------------------------------------------------------------------------------- |
+| Propiedades     | SI                                       | NO                                                                               |
+| Metodos         | Métodos concretos heredados del padre    | No tiene métodos concretos                                                       |
+| Caracteristicas | Todos los hijos tiene los mismos metodos | Cada hijo hereda los métodos y PUEDE CONTROLAR el comportamiento de cada método. |
+| UML             | SE EXTIENDE                              | SE IMPLEMENTA                                                                    |
+
+ 
+table
 RECURSOS
 <blockquote class="warning">NotasImportantes </blockquote>
 <blockquote class="sky">NotasImportantes</blockquote>
