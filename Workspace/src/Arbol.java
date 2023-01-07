@@ -1,6 +1,8 @@
 /**
- * @Autor: Jefferson Chileno
- */
+ * @author Jefferson Chileno
+ * @date 25-12-2022
+ * @class: Arbol de navidad
+ **/
 
 public class Arbol {
 
