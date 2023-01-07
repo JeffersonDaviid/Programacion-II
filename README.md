@@ -312,7 +312,7 @@ public float metodo(float a, float b){
    return a + b;
 }
 ```
-<blockquote class="sky">Puede exitir funciones con el mismo nombre pero DEBEN SER DE DISTINTO TIPO DE PARAMETRO<br>En el ejemplo anterior tenemos 3 sumas</blockquote>
+<blockquote class="sky">Puede exitir funciones con el mismo nombre pero DEBEN SER DE DISTINTO TIPO DE PARAMETRO<br>En el ejemplo anterior tenemos 3 sumas</blockquote><br>
 
 
 
@@ -353,11 +353,6 @@ public Padre(String nombre, String ocupacion, String sexo, int edad) {
 ### NOTACION PARA METODOS
 - `+` public
 - `-` private
-- `~` paquete
-- `#` protect
-
- 
-### DIAGRAMA `OML`
 
 #### POO
 - Mejorar el dieño
@@ -409,9 +404,33 @@ Si nos ponemos a pensar que cuando necesitamos una acción heredada de otra clas
 | Metodos         | Métodos concretos heredados del padre    | No tiene métodos concretos                                                       |
 | Caracteristicas | Todos los hijos tiene los mismos metodos | Cada hijo hereda los métodos y PUEDE CONTROLAR el comportamiento de cada método. |
 | UML             | SE EXTIENDE                              | SE IMPLEMENTA                                                                    |
+<h3 class="center subtitulo"> ARQUITECTURA DE SOFTWARE </h3>
 
- 
-table
+## Estructura de capas
+### CAPAS
+- PRESENTACION - GUI
+- APLICACCIÓN - código
+- DATOS - persistencia de datos
+
+# PROYECTO 3 Pt
+
+Fecha: Miercoles
+- _1pt: Prototipo_ : (Mockup/Sigma/drawio) de todas las pantallas de aplicación
+- _1pt Presentación_: Powepoint explicar 
+- _1pt Demo_ : 20% o 30% de la app
+
+# WORKSHOP 2 Pt
+Jueves
+
+- Todas las clases documentadas.
+
+# EXAMEN
+
+Temas:   
+- Todo hasta interfaces
+- Interfaces graficas 
+
+
 RECURSOS
 <blockquote class="warning">NotasImportantes </blockquote>
 <blockquote class="sky">NotasImportantes</blockquote>
