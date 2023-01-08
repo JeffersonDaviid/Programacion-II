@@ -1,24 +1,30 @@
 package UI_Interface;
 
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Font;
 import java.awt.Image;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.SwingConstants;
-import java.awt.Font;
-import java.awt.Color;
-import javax.swing.JTextField;
-import javax.swing.border.MatteBorder;
-import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import java.awt.Cursor;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Login extends JFrame {
 
@@ -31,10 +37,12 @@ public class Login extends JFrame {
 		// frame.setVisible(true);
 		// frame.setIconImage(new
 		// ImageIcon(getClass().getResource("images/logoEmpresa.png")).getImage());
+
 	}
 
 	public Login() {
-		setIconImage(new ImageIcon(getClass().getResource("images/logoEmpresa.png")).getImage());
+		// setIconImage(new
+		// ImageIcon(getClass().getResource("images/logoEmpresa.png")).getImage());
 
 		setTitle("Iniciar sesión");
 		setBounds(0, 0, 800, 400);
@@ -105,6 +113,31 @@ public class Login extends JFrame {
 		contentPane.add(txtContrasena);
 
 		JButton btnIngresar = new JButton("Ingresar");
+		btnIngresar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					// Consultar la base de datos
+					// ("RUTA Y NOMBRE DE LA BASE DE DATOS","USUARIO","CONTRASEÑA")
+					Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/bd_usuarios", "root", "");
+
+					PreparedStatement pst = cn.prepareStatement("select * from usuarios where User = ?");
+					pst.setString(1, txtUsuario.getText().trim());
+					// permite conocer si encontro los datos
+					ResultSet resultado = pst.executeQuery();
+
+					if (resultado.next()) {
+						JOptionPane.showMessageDialog(null, "Bienvenido usuario " +
+								resultado.getString("User").toUpperCase());
+					} else {
+						JOptionPane.showMessageDialog(null, "El usuario " +
+								txtUsuario.getText().toUpperCase()
+								+ " no se encuentra en la base de datos");
+					}
+				} catch (Exception errorSesion) {
+					JOptionPane.showMessageDialog(null, "No se puede conectar con la base de datos");
+				}
+			}
+		});
 		btnIngresar.setBackground(new Color(246, 211, 45));
 		btnIngresar.setBorderPainted(false);
 		btnIngresar.setBorder(new LineBorder(new Color(73, 168, 53), 10, true));
@@ -128,5 +161,13 @@ public class Login extends JFrame {
 						Image.SCALE_SMOOTH));
 		lbBackground.setIcon(iconBackgound);
 		contentPane.add(lbBackground);
+	}
+
+	public JTextField getTxtUsuario() {
+		return txtUsuario;
+	}
+
+	public JPasswordField getTxtContrasena() {
+		return txtContrasena;
 	}
 }

@@ -48,7 +48,7 @@ public class App {
             // }
             Login v = new Login();
             v.setVisible(true);
-        } catch (Exception error) {
+        } catch (Exception errorConectionInitial) {
             Disconected d = new Disconected();
             d.setVisible(true);
             // sudo /opt/lampp/lampp start -> inicar
