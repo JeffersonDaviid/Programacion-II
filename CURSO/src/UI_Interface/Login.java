@@ -27,26 +27,17 @@ public class Login extends JFrame {
 	private JPasswordField txtContrasena;
 
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Login frame = new Login();
-					frame.setVisible(true);
-					frame.setIconImage(new ImageIcon(getClass().getResource("images/logoEmpresa.png")).getImage());
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		Login frame = new Login();
+		// frame.setVisible(true);
+		// frame.setIconImage(new
+		// ImageIcon(getClass().getResource("images/logoEmpresa.png")).getImage());
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public Login() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 400);
+		setIconImage(new ImageIcon(getClass().getResource("images/logoEmpresa.png")).getImage());
+
+		setTitle("Iniciar sesión");
+		setBounds(0, 0, 800, 400);
 		contentPane = new JPanel();
 		contentPane.setAutoscrolls(true);
 		contentPane.setFont(new Font("FreeSerif", Font.PLAIN, 12));
@@ -55,7 +46,8 @@ public class Login extends JFrame {
 		setLocationRelativeTo(null);
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		setTitle("Iniciar sesión");
+		// setVisible(true); // NO PUEDE estar en el constructor
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JLabel lbNameBusiness = new JLabel("EASY SELL");
 		lbNameBusiness.setFont(new Font("DejaVu Sans Mono", Font.BOLD | Font.ITALIC, 35));
@@ -117,6 +109,7 @@ public class Login extends JFrame {
 		btnIngresar.setBorderPainted(false);
 		btnIngresar.setBorder(new LineBorder(new Color(73, 168, 53), 10, true));
 		btnIngresar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		setLocationRelativeTo(null);
 		btnIngresar.setBounds(550, 318, 117, 25);
 		contentPane.add(btnIngresar);
 
@@ -135,6 +128,5 @@ public class Login extends JFrame {
 						Image.SCALE_SMOOTH));
 		lbBackground.setIcon(iconBackgound);
 		contentPane.add(lbBackground);
-
 	}
 }

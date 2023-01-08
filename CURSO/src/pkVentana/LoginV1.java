@@ -24,13 +24,13 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-public class Login extends JFrame {
+public class LoginV1 extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtUsuario;
 	private JPasswordField txtContrasena;
 
-	public Login() {
+	public LoginV1() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 383, 515);
@@ -158,7 +158,7 @@ public class Login extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Login frame = new Login();
+					LoginV1 frame = new LoginV1();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
