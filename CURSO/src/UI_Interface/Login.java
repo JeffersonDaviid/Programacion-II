@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -33,7 +34,7 @@ public class Login extends JFrame {
 	private JPasswordField txtContrasena;
 
 	public static void main(String[] args) {
-		Login frame = new Login();
+		// Login frame = new Login();
 		// frame.setVisible(true);
 		// frame.setIconImage(new
 		// ImageIcon(getClass().getResource("images/logoEmpresa.png")).getImage());
@@ -112,30 +113,17 @@ public class Login extends JFrame {
 		txtContrasena.setBounds(482, 250, 253, 30);
 		contentPane.add(txtContrasena);
 
+		JComboBox comboRol = new JComboBox(new String[] { "Administrador", "Trabajador", "Otro" });
+		comboRol.setForeground(Color.DARK_GRAY);
+		comboRol.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		comboRol.setBackground(new Color(246, 211, 45));
+		comboRol.setBounds(497, 195, 223, 24);
+		contentPane.add(comboRol);
+
 		JButton btnIngresar = new JButton("Ingresar");
 		btnIngresar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try {
-					// Consultar la base de datos
-					// ("RUTA Y NOMBRE DE LA BASE DE DATOS","USUARIO","CONTRASEÑA")
-					Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/bd_usuarios", "root", "");
-
-					PreparedStatement pst = cn.prepareStatement("select * from usuarios where User = ?");
-					pst.setString(1, txtUsuario.getText().trim());
-					// permite conocer si encontro los datos
-					ResultSet resultado = pst.executeQuery();
-
-					if (resultado.next()) {
-						JOptionPane.showMessageDialog(null, "Bienvenido usuario " +
-								resultado.getString("User").toUpperCase());
-					} else {
-						JOptionPane.showMessageDialog(null, "El usuario " +
-								txtUsuario.getText().toUpperCase()
-								+ " no se encuentra en la base de datos");
-					}
-				} catch (Exception errorSesion) {
-					JOptionPane.showMessageDialog(null, "No se puede conectar con la base de datos");
-				}
+				iniciarSesion();
 			}
 		});
 		btnIngresar.setBackground(new Color(246, 211, 45));
@@ -145,13 +133,6 @@ public class Login extends JFrame {
 		setLocationRelativeTo(null);
 		btnIngresar.setBounds(550, 318, 117, 25);
 		contentPane.add(btnIngresar);
-
-		JComboBox comboBox = new JComboBox(new String[] { "Administrador", "Trabajador", "Otro" });
-		comboBox.setForeground(Color.DARK_GRAY);
-		comboBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		comboBox.setBackground(new Color(246, 211, 45));
-		comboBox.setBounds(497, 195, 223, 24);
-		contentPane.add(comboBox);
 
 		JLabel lbBackground = new JLabel();
 		lbBackground.setBounds(0, 0, 821, 372);
@@ -163,11 +144,57 @@ public class Login extends JFrame {
 		contentPane.add(lbBackground);
 	}
 
-	public JTextField getTxtUsuario() {
-		return txtUsuario;
-	}
+	public void iniciarSesion() {
+		try {
+			// Consultar la base de datos
+			// ("RUTA Y NOMBRE DE LA BASE DE DATOS","USUARIO","CONTRASEÑA")
+			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/bd_usuarios", "root", "");
+			PreparedStatement consulta = conexion
+					.prepareStatement("select * from usuarios where User = ?");
+			consulta.setString(1, txtUsuario.getText().trim());// otra opcion
+			// permite conocer si encontro los datos
+			ResultSet resultado = consulta.executeQuery();
 
-	public JPasswordField getTxtContrasena() {
-		return txtContrasena;
+			if (resultado.next()) {
+				if (resultado.getString("User").toUpperCase().equals(txtUsuario.getText().trim().toUpperCase())
+						&& resultado.getString("Password").equals(new String(txtContrasena.getPassword()))) {
+
+					JOptionPane.showMessageDialog(null, "Bienvenido usuario " +
+							resultado.getString("User").toUpperCase() + " Su pass es "
+							+ resultado.getString("Password") + "Y su selección es ");
+
+					PrincipalAdmin p = new PrincipalAdmin();
+					p.setVisible(true);
+					this.setVisible(false);
+				} else {
+					JOptionPane.showMessageDialog(null, "Usuario o Contraseña son incorrectos, intente nuevamente");
+				}
+			} else {
+				JOptionPane.showMessageDialog(null, "El usuario " +
+						txtUsuario.getText().toUpperCase()
+						+ " no se encuentra en la base de datos");
+			}
+
+			// // Query
+			// PreparedStatement inputDataBase = conexion
+			// .prepareStatement("insert into usuarios values(?,?,?,?,?,?,?,?,?,?,?)");
+			// // Llenando la base de datos
+			// inputDataBase.setString(1, "emersonjones18");
+			// inputDataBase.setString(2, "271511");
+			// inputDataBase.setString(3, "Trabajador");
+			// inputDataBase.setString(4, "ACTIVO");
+			// inputDataBase.setString(5, "Emerson");
+			// inputDataBase.setString(6, "Daniel");
+			// inputDataBase.setString(7, "Jones");
+			// inputDataBase.setString(8, "Germain");
+			// inputDataBase.setString(9, "1860576842");
+			// inputDataBase.setString(10, "0992758487");
+			// inputDataBase.setInt(11, 25);
+			// inputDataBase.executeUpdate(); // ENVIAR A LA BASE
+
+			conexion.close();
+		} catch (SQLException errorSesion) {
+			JOptionPane.showMessageDialog(null, "No se puede conectar con la base de datos");
+		}
 	}
 }

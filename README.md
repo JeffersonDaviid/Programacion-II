@@ -158,7 +158,8 @@ strong {
 </p>
 
 
-# 🤣SEMANA 1
+#  1. INTRODUCCION A LA PROGRAMACION, ARLGORITMOS Y DISEÑO
+# SEMANA 1
 ## PREPARANDO NUESTRAS HERRAMIENTAS...
 ### IDE
 Tiene que tener:
@@ -205,7 +206,7 @@ gh repo clone JeffersonDaviid/Programacion-II
 ---
 
 
-# 😆SEMANA 2
+# 😆SEMANA 2 
 
 ## CONOCIMIENTOS BASICOS
 ### Métodos 
@@ -216,9 +217,32 @@ gh repo clone JeffersonDaviid/Programacion-II
 
 <blockquote class="warning">Regla de Java:<br>El nombre del archivo debe ser EL MISMO que el nombre de la clase y tiene que ir en Mayusculas</blockquote><br>
 
-### Tipo de datos
+##  CONTROL DE FLUJO 
 
-#### Propios de Java
+Define el comportamiento de los datos.
+  - if - else
+  - for (n)
+  - while(<>!=)
+  - Do (<>!=)
+  - switch
+
+
+``` c
+int a = 10;           // Tipo de dato entero
+char nombre = "";     // Tipo de dato caracter
+
+if (a == 10) {
+    printf("el valor de a es 10");
+  } else {
+    printf("el valor de a no es 10");
+  }
+  return = 0;
+
+  Funciones() <return>;   // Siempre retorna un valor
+  Procedimiento();        // Solo realiza una acción pero no retorna una valor
+```
+## Tipo de datos
+### Propios de Java
 - String
 - Integer
 - Bool
@@ -231,7 +255,71 @@ gh repo clone JeffersonDaviid/Programacion-II
 
 > Standart codif. : `camelCase`
 
-### 
+## ALGORITMIA
+
+<span class="morado"> EJEMPLO 2: </span> 
+
+  1. **PROBLEMA**:    Determinar el mayor de 2 números
+  2. **SOLUCIÓN**:    10, 30, 5
+
+      __VARIABLES: a=10, b=30, c=5__
+
+     1. **ALGORITMO** (pseudocódigo)  
+              
+          ``` H
+		  Imprimir	"Ingrese el primer valor: "    
+          Leer 		a    
+          Imprimir 	"Ingrese el segundo valor: "   
+          Leer 		b    
+          Imprimir 	"Ingrese el tercer valor: "    
+          Leer 		c    
+
+          Si (a>=b) y (a>=c)    
+            imprimir "el mayor valor es: " a  
+            terminar  
+          Si (b>=a) y (b>=c)    
+            imprimir "el mayor valor es: " b    
+            terminar
+          Si (c>=a) y (c>=b)    
+            imprimir "el mayor valor es: " c
+            terminar
+		  ```
+
+      2. **DIAGRAMA DE FLUJO**   
+            
+          **Diagrama _con error_**
+
+		  ![Diagrama ejercicio 2](src/img/semana2.2_algoritmia-DiagramaDeFlujoEjercicio2conError.png)		
+		  	
+		  > Tiene un error porque el programa a pesar de que puede cumplirse una condicion, tiene que terminar, PERO aquí no, el programa EJECUTA TODAS LAS INSTRUCCIONES SIGUIENTES las cumpla o no.   
+		  >
+		  > Esto genera un CONSUMO DE RECURSOS INNECESARIOS		
+            
+          **Diagrama _sin error_**	
+
+		  ![Diagrama ejercicio 2](src/img/semana2.2_algoritmia-DiagramaDeFlujoEjercicio2.png)			
+		  	
+		  > Cuado se cumpla una condición entonces el programa termina con su ejecución
+		  >	
+		  > Esto NO genera un CONSUMO DE RECURSOS INNECESARIOS		
+
+
+      3. **CODING**
+
+		```
+		// Aquí va el codigo
+		```
+		
+      4. **TRACE**   
+
+          ![Trace de ejericio 2](src/img/semana2.2_algoritmia-traceEjercicio2.1.png "Trace del ejercicio 1")    
+
+
+---
+---
+
+# 2. FUNDAMENTOS DE JAVA
+## INTROUDUCCION A JAVA 
 Propiedad = `Ambito` + variable  
 - Ambito: public, private, protect
   >Ejemplo:       
@@ -270,6 +358,29 @@ public class App {
 
 ## Bibliotecas
 Aquí algunas de las librerias más usadas y básicas, librerias del propio lenguaje, NO LIBRERIAS EXTERNAS.
+
+### Alagunos metodos más comunes
+
+String : str
+- `charAt(index)` // obtener un carácter   
+- `Length` // obtener la longitud del string    
+- `Equals` // comparación  
+- `equalsIgnoreCase` // ignorar si es mayúsculas o minúscula      
+
+Scanner : std
+
+Scanner stdIn = new Scanner(System.in);      
+< variable > = stdIn.nextLine();      
+- `nextInt()` Se salta los espacios dejados en blanco hasta que encuentra un valor de tipo int     
+- `nextLong()` Se salta los espacios dejados en blanco hasta que encuentra un valor de tipo long         
+- `nextFloat()` Se salta los espacios dejados en blanco hasta que encuentra un valor de tipo float    
+- `nextDouble()` Se salta los espacios dejados en blanco hasta que encuentra un valor de tipo double     
+
+
+“salta los espacios dejados en blanco ”
+- `next()` Se salta los espacios dejados en blanco hasta que encuentra un token. Devuelve el token como un valor tipo String.
+
+
 
 ### SCANNER
 
@@ -345,6 +456,7 @@ public Padre(String nombre, String ocupacion, String sexo, int edad) {
 ```
 > `this` : Referenciar variables dentro del CONSTRUCTOR de las clase.
 
+## DIAGRAMACION UML
 ### NOTACION PARA AMBITOS
 - `+` public
 - `-` private
