@@ -211,7 +211,7 @@ gh repo clone JeffersonDaviid/Programacion-II
 ## CONOCIMIENTOS BASICOS
 ### Métodos 
 - Retornan valor : `funcion`
-- no retona valor : `procedimiento` - metodos
+- no retorna valor : `procedimiento` - metodos
 
 ### Structura Básica
 
@@ -289,7 +289,7 @@ if (a == 10) {
             
           **Diagrama _con error_**
 
-		  ![Diagrama ejercicio 2](src/img/semana2.2_algoritmia-DiagramaDeFlujoEjercicio2conError.png)		
+		  ![Diagrama ejercicio 2](Workspace\img_clases\semana2.2_algoritmia-DiagramaDeFlujoEjercicio2conError.png)		
 		  	
 		  > Tiene un error porque el programa a pesar de que puede cumplirse una condicion, tiene que terminar, PERO aquí no, el programa EJECUTA TODAS LAS INSTRUCCIONES SIGUIENTES las cumpla o no.   
 		  >
@@ -297,7 +297,7 @@ if (a == 10) {
             
           **Diagrama _sin error_**	
 
-		  ![Diagrama ejercicio 2](src/img/semana2.2_algoritmia-DiagramaDeFlujoEjercicio2.png)			
+		  ![Diagrama ejercicio 2](Workspace\img_clases\semana2.2_algoritmia-DiagramaDeFlujoEjercicio2.png)			
 		  	
 		  > Cuado se cumpla una condición entonces el programa termina con su ejecución
 		  >	
@@ -312,14 +312,14 @@ if (a == 10) {
 		
       4. **TRACE**   
 
-          ![Trace de ejericio 2](src/img/semana2.2_algoritmia-traceEjercicio2.1.png "Trace del ejercicio 1")    
+          ![Trace de ejericio 2](Workspace\img_clases\semana2.2_algoritmia-traceEjercicio2.1.png "Trace del ejercicio 1")    
 
 
 ---
 ---
 
 # 2. FUNDAMENTOS DE JAVA
-## INTROUDUCCION A JAVA 
+## INTRODUCCION A JAVA 
 Propiedad = `Ambito` + variable  
 - Ambito: public, private, protect
   >Ejemplo:       
@@ -391,14 +391,13 @@ Scanner stdIn = new Scanner(System.in);
 
 # 🙂SEMANA 3
 
-# POO
 
 ## Creación de Métodos
 ### Métodos sin retorno de valor
 ```java
 public void metodo(){
    // Instrucciones
-}
+}****
 ```
 
 Detalles:
@@ -429,11 +428,13 @@ public float metodo(float a, float b){
 
 # 😶SEMANA 5
 
+# PROGRAMACION ORIENTADA A OBJETOS
+
 ## HERENCIA
 
-Permite la reutilizar código
+Permite la reutilizar código, es decir: Permite la creacion de clases apartir de otras ya existentes, heredando todas sus propiedades y métodos.
 
-### Nomenclatura
+### NOMENCLATURA
 
 Clase original   =  clase Padre  = Superclase      
 Clase secundaria =  clase hijo   =  Subclase
@@ -443,6 +444,25 @@ Clase secundaria =  clase hijo   =  Subclase
 Tiene que tener el mismo nombre de la clase;
 
 > Para pasar la herencia a los hijos usamos `EXTENDS nombreClaseHijo`
+
+Queremos heredar la clase `Hijo` apartir de la clase `Padre`.
+```java
+// ARCHIVO PADRE
+public class Padre {
+   public Padre(String nombre, String ocupacion, String sexo, int edad) {
+      this.nombre = nombre;
+      this.ocupacion = ocupacion;
+      this.sexo = sexo;
+      this.edad = edad;
+   }
+}
+// ARCHIVO HIJO
+public class Hijo extends Padre(String nombre, String ocupacion, String sexo, int edad){
+   super(nombre, ocupacion, sexo, edad); // Super OBLIGATORIAMENTE debe ser la primera linea de codigo  cuando se requiere agregar. SI
+
+   // aqui vas el codigo del Hijo
+}
+```
 
 
 ### CONSTRUCTOR CON PARAMETROS
@@ -504,7 +524,37 @@ Barco b = new Barco();
 _exclude :_ va en dirección de la clase que la contiene, generalemente se usan entre caso de uso.   
 _include :_ va en sentido de elemento opcional
 
+![Todos los elementos para el diagrama UML](Workspace\img_clases\elementosUML.jpg)
+
+### EJEMPLO DE DIGRAMA DE CLASES
+
+Ejemplo de un biblioteca
+
+![Ejemplo de diagramas de clases](Workspace\img_clases\diagramaDeClases_ejemplo.webp)
+
+### ELEMENTOS DE DIAGRAMA DE CASO DE USO
+
+![Elementos de diagramas de caso de Uso](Workspace\img_clases\elementosDiagramaDeCasoDeUso.jpg)
+
+### EJEMPLO DE DIAGRAMA DE CASO DE USO
+
+Comportamiento en cada elemento y su relación
+
+![ejemplo de diagrama de caso de uso](Workspace/img_clases/diagramasDeCasoDeUso_ejemplo.jpg)
+
 # SEMANA 7
+
+
+## ARQUITECTURA DE SOFTWARE (N-Tire)
+
+ 
+###  Preguntas que se debe hacer 
+
+- puede ser?
+- debe ser?
+- es?
+
+
 
 ## INTERFAZ
 
@@ -524,25 +574,30 @@ Si nos ponemos a pensar que cuando necesitamos una acción heredada de otra clas
 - APLICACCIÓN - código
 - DATOS - persistencia de datos
 
-# PROYECTO 3 Pt
+# NOTAS I BIMESTRE
+
+## PROYECTO 3 Pt
 
 Fecha: Miercoles
-- _1pt: Prototipo_ : (Mockup/Sigma/drawio) de todas las pantallas de aplicación
+- _1pt: Prototipo_ : (Mockup/Figma/drawio) de todas las pantallas de aplicación
 - _1pt Presentación_: Powepoint explicar 
 - _1pt Demo_ : 20% o 30% de la app
 
-# WORKSHOP 2 Pt
-Jueves
+## WORKSHOP 2 Pt
+
+
+Jueves 12 de Enero de 2023
 
 - Todas las clases documentadas.
+- Exportar en PDF
 
-# EXAMEN
+## EXAMEN
 
 Temas:   
 - Todo hasta interfaces
-- Interfaces graficas 
+- Interfaces graficas - Botones
 
-
+<!-- 
 RECURSOS
 <blockquote class="warning">NotasImportantes </blockquote>
 <blockquote class="sky">NotasImportantes</blockquote>
@@ -551,4 +606,4 @@ RECURSOS
 
 ```python 
 
-```
+``` -->
