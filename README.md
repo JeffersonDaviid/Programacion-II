@@ -597,7 +597,53 @@ Temas:
 - Todo hasta interfaces
 - Interfaces graficas - Botones
 
-<!-- 
+<center>
+<span class="title"> PROGRAMACION II </span><br>
+<span class="tag"> < </span>
+<span class="autor">JEFFERSON DAVID</span>
+<span class="tag"> /> </span><br>
+<span class="bimestre"> II BIMESTRE </span></center>
+
+
+# CORRECCIÓN DE EXAMEN
+
+## Interfaces:  
+
+- Son l@s propiedades/métodos que vamos a exigir 
+
+ejemplo:
+
+| <center> << Interfaz >> |
+| ----------------------- |
+| + addAmigos() : void    |
+| + addAmigosDe() : void  |
+| + showAmigos() : void   |
+
+```java 
+public class  IActividad{
+
+}
+```
+
+```java 
+public class Persona extends Integrante implements IActividad{
+
+}
+```
+
+# 😈 BASES DE DATOS con SQLITE
+
+## PASOS PARA INICIAR BASE DE DATOS
+0. Instalar extensión (VScode) SQLite
+1. Crear directorio (DB)
+2. Base de datos  `.db`
+3. Crear dir/sqlScript
+4. Shemma.sql -> 
+  
+
+
+
+
 RECURSOS
 <blockquote class="warning">NotasImportantes </blockquote>
 <blockquote class="sky">NotasImportantes</blockquote>
@@ -606,4 +652,4 @@ RECURSOS
 
 ```python 
 
-``` -->
+```
